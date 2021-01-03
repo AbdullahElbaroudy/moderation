@@ -76,7 +76,7 @@ class _AddShippingCompanyScreenState extends State<AddShippingCompanyScreen> {
           (map){
             return Text("data");
           }
-        ).toList() ,
+        ).toList(),
       ),
     );
   }
