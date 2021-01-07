@@ -27,12 +27,30 @@ class SignUp {
        await Navigators(userID: id, navigationTitle: 'my_profile', status: true)
           .saveToDB();
       if (userName == 'admin') {
-        await Navigators(
+            await Navigators(
                 userID: id, navigationTitle: 'navigators', status: true)
+            .saveToDB();
+            await Navigators(
+                userID: id, navigationTitle: 'products', status: true)
+            .saveToDB();
+             await Navigators(
+                userID: id, navigationTitle: 'shipping_company', status: true)
+            .saveToDB();
+            await Navigators(
+                userID: id, navigationTitle: 'orders', status: true)
             .saveToDB();
       } else {
         await Navigators(
                 userID: id, navigationTitle: 'navigators', status: false)
+            .saveToDB();
+            await Navigators(
+                userID: id, navigationTitle: 'products', status: false)
+            .saveToDB();
+             await Navigators(
+                userID: id, navigationTitle: 'shipping_company', status: false)
+            .saveToDB();
+            await Navigators(
+                userID: id, navigationTitle: 'orders', status: false)
             .saveToDB();
       }
       await _sharedPreferences.setInt('user_id', id);

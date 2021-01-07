@@ -25,7 +25,6 @@ import 'package:moderation_tool/models/order_status_model.dart';
 import 'package:moderation_tool/models/product_model.dart';
 import 'package:moderation_tool/models/region_cost_model.dart';
 import 'package:moderation_tool/models/settings_model.dart';
-import 'package:moderation_tool/models/shipping_company_model.dart';
 import 'package:moderation_tool/models/user_model.dart';
 import 'package:moderation_tool/screens/add_product_screen.dart';
 import 'package:moderation_tool/screens/home_screen.dart';
@@ -41,7 +40,7 @@ import 'package:moderation_tool/utilites/prepare.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIOverlays([]);
+  //SystemChrome.setEnabledSystemUIOverlays([]);
   Prepare _prepare = Prepare();
   await _prepare.widgetUnits.initWindow();
   //runApp(Phoenix(child: DevicePreview(child: MyApp()))); 
