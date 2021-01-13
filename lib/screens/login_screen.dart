@@ -19,11 +19,10 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _userNameTextEditingController;
   TextEditingController _passwordTextEditingController;
   FocusNode _focusNode2;
-  Prepare _prepare;
+  
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   void initState() {
-    _prepare = Prepare();
     _focusNode2 = FocusNode();
     _userNameTextEditingController = TextEditingController();
     _passwordTextEditingController = TextEditingController();
@@ -66,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: ListView(
                   children: [
                     SizedBox(
-                      height: _prepare.widgetUnits.screenHeight * 0.07,
+                      height: MediaQuery.of(context).size.height * 0.07,
                     ),
                     CustomTextField(
                       textInputAction: TextInputAction.next,
@@ -93,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       icon: Icons.supervised_user_circle,
                     ),
                     SizedBox(
-                      height: _prepare.widgetUnits.screenHeight * 0.03,
+                      height: MediaQuery.of(context).size.height * 0.03,
                     ),
                     CustomTextField(
                       focusNode: _focusNode2,
@@ -102,7 +101,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         await checkLogin();
                       },
                       enablePasswordText: true,
-                      maxLines: 5,
                       animation: true,
                       textController: _passwordTextEditingController,
                       hintText:
@@ -117,13 +115,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       icon: Icons.lock,
                     ),
                     SizedBox(
-                      height: _prepare.widgetUnits.screenHeight * 0.1,
+                      height: MediaQuery.of(context).size.height * 0.1,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(
-                          horizontal: _prepare.widgetUnits.screenWidth * 0.2),
+                          horizontal: MediaQuery.of(context).size.width * 0.2),
                       child: Container(
-                        height: _prepare.widgetUnits.screenHeight * 0.09,
+                        height: MediaQuery.of(context).size.height * 0.09,
                         child: RaisedButton(
                           child: Text(AppLocale.of(context).translat('login')),
                           onPressed: () async {
@@ -133,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: _prepare.widgetUnits.screenHeight * 0.07,
+                      height: MediaQuery.of(context).size.height * 0.07,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -149,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Container(
                             child: Padding(
                               padding: EdgeInsets.all(
-                                  _prepare.widgetUnits.screenWidth * 0.01),
+                                  MediaQuery.of(context).size.height * 0.01),
                               child: Text(
                                 AppLocale.of(context).translat('register_now'),
                                 style: Theme.of(context).textTheme.body2,

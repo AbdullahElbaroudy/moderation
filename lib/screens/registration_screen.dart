@@ -19,7 +19,7 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _formKey = GlobalKey<FormState>();
-  WidgetUnits _widgetUnits;
+  
   TextEditingController _userNameTextEditingController;
   TextEditingController _passwordTextEditingController;
   TextEditingController _confirmPasswordTextEditingController;
@@ -38,7 +38,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     _userNameTextEditingController = TextEditingController();
     _passwordTextEditingController = TextEditingController();
     _confirmPasswordTextEditingController = TextEditingController();
-    _widgetUnits = WidgetUnits();
     super.initState();
   }
 
@@ -73,12 +72,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
           key: _formKey,
           child: Column(
-            
             children: [
               CustomIntroHeader(w: w, h: h, t: t, word: word, baseColor: baseColor, highlightColor: highlightColor),
               Flexible(
                 child: Padding(
-                  padding: EdgeInsets.all(_widgetUnits.screenWidth * 0.05),
+                  padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.05),
                   child: ListView(
                     children: [
                       CustomTextField(
@@ -106,7 +104,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         icon: Icons.supervised_user_circle,
                       ),
                       SizedBox(
-                        height: _widgetUnits.screenHeight * 0.03,
+                        height: MediaQuery.of(context).size.height * 0.03,
                       ),
                       CustomTextField(
                         textInputAction: TextInputAction.next,
@@ -140,7 +138,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         icon: Icons.lock,
                       ),
                       SizedBox(
-                        height: _widgetUnits.screenHeight * 0.03,
+                        height: MediaQuery.of(context).size.height * 0.03,
                       ),
                       CustomTextField(
                         textInputAction: TextInputAction.done,
@@ -169,13 +167,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         icon: Icons.lock,
                       ),
                       SizedBox(
-                        height: _widgetUnits.screenHeight * 0.04,
+                        height: MediaQuery.of(context).size.height * 0.04,
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(
-                            horizontal: _widgetUnits.screenWidth * 0.2),
+                            horizontal: MediaQuery.of(context).size.width * 0.2),
                         child: Container(
-                          height: _widgetUnits.screenHeight * 0.09,
+                          height: MediaQuery.of(context).size.height * 0.09,
                           child: RaisedButton(
                             child:
                                 Text(AppLocale.of(context).translat('sign_up')),
@@ -186,7 +184,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: _widgetUnits.screenHeight * 0.04,
+                        height: MediaQuery.of(context).size.height * 0.04,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -196,7 +194,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 .translat('do_you_have_acount'),
                           ),
                           SizedBox(
-                            width: _widgetUnits.screenWidth * 0.02,
+                            width: MediaQuery.of(context).size.width * 0.02,
                           ),
                           GestureDetector(
                             onTap: () {
@@ -206,7 +204,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             child: Container(
                               child: Padding(
                                 padding: EdgeInsets.all(
-                                    _widgetUnits.screenWidth * 0.01),
+                                    MediaQuery.of(context).size.width * 0.01),
                                 child: Text(
                                   AppLocale.of(context).translat('login'),
                                   style: Theme.of(context).textTheme.body2,
